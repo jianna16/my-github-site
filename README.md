@@ -6,3 +6,8 @@
 [my goal is to understand the importance of this subject and learn different ways on how to code and create apps] 
 ## What I Want to Build 
 [i would like to create aonther app for different use] 
+
+
+
+
+
