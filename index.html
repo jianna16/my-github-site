@@ -64,14 +64,16 @@
         transform: scale(1.05);
       }
       
-      /* Updated styles to make your puppy image smaller */
+      /* New CSS trick to crop and focus directly on the puppy's face */
       .pet-image {
-        width: 100%;
-        max-width: 300px; /* Reduced max size from 100% to 300px */
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 150px;           /* Tiny size */
+        height: 150px;          /* Matching height makes it a perfect square */
+        border-radius: 50%;     /* Changes the square into a clean circle profile */
+        object-fit: cover;      /* Prevents the image from stretching out of shape */
+        object-position: center 30%; /* Zooms right into the top-center where the puppy is */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         margin-top: 10px;
+        border: 3px solid var(--heading-2); /* Elegant matching frame border */
       }
     </style>
   </head>
