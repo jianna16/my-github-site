@@ -5,11 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jianna's Website</title>
     <style>
-      body { font-family: Arial, sans-serif; max-width: 800px;
-             margin: 0 auto; padding: 20px; background: #f5f5f5; }
-      h1   { color: #1F4E79; }
-      h2   { color: #2E75B6; border-bottom: 2px solid #2E75B6; }
-      p    { line-height: 1.6; }
+      /* Setup the default light pink mode using CSS variables */
+      :root {
+        --bg-color: #FFF0F5; /* Lavender Blush / Soft Light Pink */
+        --heading-1: #4A1525; /* Deep berry pink */
+        --heading-2: #8B4F65; /* Medium mauve pink */
+        --text-color: #333333;
+        --card-bg: #FFFFFF;
+      }
+
+      /* Setup the blue mode variables */
+      [data-theme="blue"] {
+        --bg-color: #E6F2FF; /* Soft Ice Blue */
+        --heading-1: #0A2540; /* Deep navy blue */
+        --heading-2: #2E75B6; /* Classic blue */
+        --text-color: #222222;
+        --card-bg: #FFFFFF;
+      }
+
+      body { 
+        font-family: Arial, sans-serif; 
+        max-width: 800px;
+        margin: 0 auto; 
+        padding: 20px; 
+        background-color: var(--bg-color); 
+        color: var(--text-color);
+        transition: background-color 0.4s ease, color 0.4s ease; /* Smooth color transition */
+      }
+
+      h1 { color: var(--heading-1); }
+      h2 { color: var(--heading-2); border-bottom: 2px solid var(--heading-2); }
+      p  { line-height: 1.6; }
+
+      /* Modern layout structure for the page content */
+      .content-card {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Style for your theme switching button */
+      .theme-btn {
+        background-color: #2E75B6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+        float: right;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+
+      .theme-btn:hover {
+        transform: scale(1.05);
+      }
       
       /* Styles to make your puppy image look great */
       .pet-image {
@@ -22,28 +75,52 @@
     </style>
   </head>
   <body>
-    <h1>Hi, I'm Jianna!</h1>
- 
-    <h2>About Me</h2>
-    <p>i enjoy tasting new foods, and hanging out with friends/cousins</p>
- 
-    <h2>My Interests</h2>
-    <p>i enjoy playing sports with my brothers, hanging out with my cousins, and going on vacation.</p>
- 
-    <h2>My Favorite Puppy</h2>
-    <p>Look at this adorable golden puppy sitting on a lap!</p>
-    <img 
-      src="https://squarespace-cdn.com..." 
-      alt="Cute golden puppy looking up happily" 
-      class="pet-image"
-    >
- 
-    <h2>My Goals for This Course</h2>
-    <p>i want to learn the importance of ap computer science and understand different ways to code for new apps</p>
- 
-    <h2>My GitHub</h2>
-    <p>Check out my projects: 
-      <a href="https://github.com/[your-username]">Jianna</a>
-    </p>
+
+    <!-- Theme switch toggle button -->
+    <button class="theme-btn" id="themeToggle" onclick="toggleTheme()">Switch to Blue Mode</button>
+
+    <div class="content-card">
+      <h1>Hi, I'm Jianna!</h1>
+   
+      <h2>About Me</h2>
+      <p>i enjoy tasting new foods, and hanging out with friends/cousins</p>
+   
+      <h2>My Interests</h2>
+      <p>i enjoy playing sports with my brothers, hanging out with my cousins, and going on vacation.</p>
+   
+      <h2>My Favorite Puppy</h2>
+      <p>Look at this adorable golden puppy sitting on a lap!</p>
+      <img 
+        src="https://squarespace-cdn.com..." 
+        alt="Cute golden puppy looking up happily" 
+        class="pet-image"
+      >
+   
+      <h2>My Goals for This Course</h2>
+      <p>i want to learn the importance of ap computer science and understand different ways to code for new apps</p>
+   
+      <h2>My GitHub</h2>
+      <p>Check out my projects: 
+        <a href="https://github.com[your-username]">Jianna</a>
+      </p>
+    </div>
+
+    <!-- Small JavaScript block to handle the theme swapping logic -->
+    <script>
+      function toggleTheme() {
+        const body = document.documentElement;
+        const btn = document.getElementById('themeToggle');
+        
+        if (body.getAttribute('data-theme') === 'blue') {
+          body.removeAttribute('data-theme');
+          btn.textContent = 'Switch to Blue Mode';
+          btn.style.backgroundColor = '#2E75B6'; // Classic blue button color
+        } else {
+          body.setAttribute('data-theme', 'blue');
+          btn.textContent = 'Switch to Pink Mode';
+          btn.style.backgroundColor = '#8B4F65'; // Mauve pink button color
+        }
+      }
+    </script>
   </body>
 </html>
