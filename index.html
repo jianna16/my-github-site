@@ -64,16 +64,25 @@
         transform: scale(1.05);
       }
       
-      /* New CSS trick to crop and focus directly on the puppy's face */
-      .pet-image {
-        width: 150px;           /* Tiny size */
-        height: 150px;          /* Matching height makes it a perfect square */
-        border-radius: 50%;     /* Changes the square into a clean circle profile */
-        object-fit: cover;      /* Prevents the image from stretching out of shape */
-        object-position: center 30%; /* Zooms right into the top-center where the puppy is */
+      /* Wrapper element to tightly contain our ultra-zoomed puppy photo */
+      .image-container {
+        width: 100px;           /* Tiny overall frame size */
+        height: 100px;          /* Makes it a perfect square */
+        border-radius: 50%;     /* Keeps the clean circular avatar style */
+        overflow: hidden;       /* Hides anything outside the circle */
+        border: 3px solid var(--heading-2); /* Matching elegant border */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         margin-top: 10px;
-        border: 3px solid var(--heading-2); /* Elegant matching frame border */
+        display: inline-block;  /* Fits perfectly below your text */
+      }
+
+      /* CSS lens zoom effect targeting only the puppy's face */
+      .pet-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 25%; /* Targets the exact coordinates of the puppy's head */
+        transform: scale(1.4);       /* Digital zoom inside the frame to crop out the background */
       }
     </style>
   </head>
@@ -93,11 +102,15 @@
    
       <h2>My Favorite Puppy</h2>
       <p>Look at this adorable golden puppy sitting on a lap!</p>
-      <img 
-        src="https://squarespace-cdn.com..." 
-        alt="Cute golden puppy looking up happily" 
-        class="pet-image"
-      >
+      
+      <!-- New layout wrapper for the ultra-cropped image -->
+      <div class="image-container">
+        <img 
+          src="https://squarespace-cdn.com..." 
+          alt="Cute golden puppy looking up happily" 
+          class="pet-image"
+        >
+      </div>
    
       <h2>My Goals for This Course</h2>
       <p>i want to learn the importance of ap computer science and understand different ways to code for new apps</p>
