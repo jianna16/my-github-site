@@ -30,7 +30,7 @@
         padding: 20px; 
         background-color: var(--bg-color); 
         color: var(--text-color);
-        transition: background-color 0.4s ease, color 0.4s ease; /* Smooth color transition */
+        transition: background-color 0.4s ease, color 0.4s ease; 
       }
 
       h1 { color: var(--heading-1); }
@@ -64,9 +64,10 @@
         transform: scale(1.05);
       }
       
-      /* Styles to make your puppy image look great */
+      /* Updated styles to make your puppy image smaller */
       .pet-image {
-        max-width: 100%;
+        width: 100%;
+        max-width: 300px; /* Reduced max size from 100% to 300px */
         height: auto;
         border-radius: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -89,9 +90,9 @@
       <p>i enjoy playing sports with my brothers, hanging out with my cousins, and going on vacation.</p>
    
       <h2>My Favorite Puppy</h2>
-      <p>Look at this adorable puppy in the snow!</p>
+      <p>Look at this adorable golden puppy sitting on a lap!</p>
       <img 
-        src="noah-buscher-pueU9kKIkXw-unsplash.jpg" 
+        src="https://squarespace-cdn.com..." 
         alt="Cute golden puppy looking up happily" 
         class="pet-image"
       >
@@ -114,11 +115,11 @@
         if (body.getAttribute('data-theme') === 'blue') {
           body.removeAttribute('data-theme');
           btn.textContent = 'Switch to Blue Mode';
-          btn.style.backgroundColor = '#2E75B6'; // Classic blue button color
+          btn.style.backgroundColor = '#2E75B6'; 
         } else {
           body.setAttribute('data-theme', 'blue');
           btn.textContent = 'Switch to Pink Mode';
-          btn.style.backgroundColor = '#8B4F65'; // Mauve pink button color
+          btn.style.backgroundColor = '#8B4F65'; 
         }
       }
     </script>
