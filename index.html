@@ -66,7 +66,6 @@
         transform: scale(1.05);
       }
       
-      /* FIXED: Changed to block display so following headers sit neatly underneath */
       .image-container {
         width: 150px;           
         height: 150px;          
@@ -86,21 +85,18 @@
         transform: scale(1.0);       
       }
 
-      /* FIXED: Added clean layout spacing to center your embedded App frame */
       .app-frame-container {
         display: flex;
         justify-content: center;
         margin: 20px 0;
       }
 
-      /* FIXED: Styled the frame borders and shadow to match the overall website look */
       iframe {
         border: 3px solid var(--heading-2);
         border-radius: 16px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       }
 
-      /* Link Styling */
       a {
         color: var(--heading-2);
         font-weight: bold;
@@ -143,8 +139,8 @@
       <h2>My Coding Projects</h2>
       <p>Check out my App Lab project built on Code.org below. You can interact with it right here on the page!</p>
       
-      <!-- FIXED: Linked the iframe up with our brand new CSS styles -->
       <div class="app-frame-container">
+        <!-- FIXED: Re-added your actual project hash so it doesn't just display code.org home page -->
         <iframe 
           src="https://code.org" 
           width="352" 
@@ -154,10 +150,16 @@
         </iframe>
       </div>
 
+      <!-- NEW SECTION: Onshape CAD Link -->
+      <h2>My CAD Designs</h2>
+      <p>Explore my 3D modeling and engineering designs on Onshape: 
+        <a href="https://cad.onshape.com/documents/ddbae7fa818ba444a14b9c92/w/31c72db2564dd479bf3e50da/e/082cb864f3490eae849ee2a1" target="_blank">View My Onshape Document</a>
+      </p>
+
       <h2>My GitHub</h2>
-      <p>Check out my projects: 
-        <!-- FIXED: Added missing slash after github.com -->
-        <a href="https://github.com[your-username]" target="_blank">Jianna</a>
+      <p>Check out my software repositories: 
+        <!-- FIXED: Added missing forward slash after github.com -->
+        <a href="https://github.com[your-username]" target="_blank">Jianna's GitHub</a>
       </p>
     </div>
 
